@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.anuj.prototype</OriginalElement>
+  <nodes>
+    <node x="4.5" y="0.0">com.anuj.prototype.IShape</node>
+    <node x="185.0" y="0.0">com.anuj.prototype.ShapeClient</node>
+    <node x="0.0" y="125.0">com.anuj.prototype.Circle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.anuj.prototype.Circle" target="com.anuj.prototype.IShape" relationship="REALIZATION">
+      <point x="0.0" y="-82.5" />
+      <point x="0.0" y="37.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="177.0" y="145.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

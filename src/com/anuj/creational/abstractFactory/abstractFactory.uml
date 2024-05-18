@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.anuj.abstractFactory</OriginalElement>
+  <nodes>
+    <node x="186.5" y="467.0">com.anuj.abstractFactory.user.IUser</node>
+    <node x="0.0" y="346.0">com.anuj.abstractFactory.logger.FileLogger</node>
+    <node x="0.0" y="125.0">com.anuj.abstractFactory.factory.FileLoggerFactory</node>
+    <node x="199.0" y="125.0">com.anuj.abstractFactory.factory.CustomLoggerFactory</node>
+    <node x="160.0" y="346.0">com.anuj.abstractFactory.logger.CustomLogger</node>
+    <node x="508.0" y="467.0">com.anuj.abstractFactory.FactoryClient</node>
+    <node x="320.0" y="545.0">com.anuj.abstractFactory.user.ConsoleUser</node>
+    <node x="160.0" y="545.0">com.anuj.abstractFactory.user.CustomUser</node>
+    <node x="0.0" y="545.0">com.anuj.abstractFactory.user.FileUser</node>
+    <node x="214.0" y="0.0">com.anuj.abstractFactory.factory.ILoggerFactory</node>
+    <node x="186.5" y="268.0">com.anuj.abstractFactory.logger.ILogger</node>
+    <node x="337.0" y="346.0">com.anuj.abstractFactory.logger.ConsoleLogger</node>
+    <node x="428.0" y="125.0">com.anuj.abstractFactory.factory.ConsoleLoggerFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.anuj.abstractFactory.logger.CustomLogger" target="com.anuj.abstractFactory.logger.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.user.CustomUser" target="com.anuj.abstractFactory.user.IUser" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.user.FileUser" target="com.anuj.abstractFactory.user.IUser" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="70.0" y="520.0" />
+      <point x="230.0" y="520.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.logger.ConsoleLogger" target="com.anuj.abstractFactory.logger.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="416.5" y="321.0" />
+      <point x="238.5" y="321.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.factory.CustomLoggerFactory" target="com.anuj.abstractFactory.factory.ILoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.logger.FileLogger" target="com.anuj.abstractFactory.logger.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="70.0" y="321.0" />
+      <point x="238.5" y="321.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.user.ConsoleUser" target="com.anuj.abstractFactory.user.IUser" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="391.5" y="520.0" />
+      <point x="230.0" y="520.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.factory.ConsoleLoggerFactory" target="com.anuj.abstractFactory.factory.ILoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-49.0" />
+      <point x="533.5" y="100.0" />
+      <point x="303.5" y="100.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="com.anuj.abstractFactory.factory.FileLoggerFactory" target="com.anuj.abstractFactory.factory.ILoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-49.0" />
+      <point x="89.5" y="100.0" />
+      <point x="303.5" y="100.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="364.0" y="310.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

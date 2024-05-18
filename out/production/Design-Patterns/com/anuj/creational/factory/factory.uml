@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.anuj.factory</OriginalElement>
+  <nodes>
+    <node x="0.0" y="423.0">com.anuj.factory.FactoryClient</node>
+    <node x="460.0" y="103.0">com.anuj.factory.FileLoggerFactory</node>
+    <node x="179.0" y="302.0">com.anuj.factory.CustomLogger</node>
+    <node x="246.0" y="0.0">com.anuj.factory.LoggerFactory</node>
+    <node x="231.0" y="103.0">com.anuj.factory.CustomLoggerFactory</node>
+    <node x="356.0" y="302.0">com.anuj.factory.FileLogger</node>
+    <node x="0.0" y="103.0">com.anuj.factory.ConsoleLoggerFactory</node>
+    <node x="205.5" y="224.0">com.anuj.factory.ILogger</node>
+    <node x="0.0" y="302.0">com.anuj.factory.ConsoleLogger</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.anuj.factory.ConsoleLogger" target="com.anuj.factory.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="79.5" y="277.0" />
+      <point x="257.5" y="277.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.factory.FileLogger" target="com.anuj.factory.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="426.0" y="277.0" />
+      <point x="257.5" y="277.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.factory.ConsoleLoggerFactory" target="com.anuj.factory.LoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="105.5" y="78.0" />
+      <point x="335.5" y="78.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.anuj.factory.CustomLogger" target="com.anuj.factory.ILogger" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.factory.FileLoggerFactory" target="com.anuj.factory.LoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="549.5" y="78.0" />
+      <point x="335.5" y="78.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="com.anuj.factory.CustomLoggerFactory" target="com.anuj.factory.LoggerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="319.5" y="249.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
