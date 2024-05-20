@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.anuj.structural.decorator</OriginalElement>
+  <nodes>
+    <node x="242.49999999999997" y="0.0">com.anuj.structural.decorator.ICoffee</node>
+    <node x="0.0" y="318.0">com.anuj.structural.decorator.SugarCoffeeDecorator</node>
+    <node x="152.5" y="182.5">com.anuj.structural.decorator.CoffeeDecorator</node>
+    <node x="338.5" y="125.0">com.anuj.structural.decorator.PlainCoffee</node>
+    <node x="248.0" y="318.0">com.anuj.structural.decorator.MilkCoffeeDecorator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.anuj.structural.decorator.PlainCoffee" target="com.anuj.structural.decorator.ICoffee" relationship="REALIZATION">
+      <point x="-5.6843418860808015E-14" y="-71.5" />
+      <point x="427.49999999999994" y="100.0" />
+      <point x="376.0" y="100.0" />
+      <point x="44.5" y="37.5" />
+    </edge>
+    <edge source="com.anuj.structural.decorator.SugarCoffeeDecorator" target="com.anuj.structural.decorator.CoffeeDecorator" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="114.0" y="293.0" />
+      <point x="235.5" y="293.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.anuj.structural.decorator.CoffeeDecorator" target="com.anuj.structural.decorator.ICoffee" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="235.5" y="100.0" />
+      <point x="287.0" y="100.0" />
+      <point x="-44.5" y="37.5" />
+    </edge>
+    <edge source="com.anuj.structural.decorator.MilkCoffeeDecorator" target="com.anuj.structural.decorator.CoffeeDecorator" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="357.0" y="293.0" />
+      <point x="235.5" y="293.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="258.5" y="219.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

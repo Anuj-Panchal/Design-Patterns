@@ -3,6 +3,13 @@ package com.anuj;
 import com.anuj.creational.prototype.Circle;
 import com.anuj.creational.prototype.IShape;
 import com.anuj.creational.prototype.ShapeClient;
+import com.anuj.structural.adapter.IPrinter;
+import com.anuj.structural.adapter.PrinterAdapter;
+import com.anuj.structural.adapter.legacy.LegacyPrinter;
+import com.anuj.structural.decorator.ICoffee;
+import com.anuj.structural.decorator.MilkCoffeeDecorator;
+import com.anuj.structural.decorator.PlainCoffee;
+import com.anuj.structural.decorator.SugarCoffeeDecorator;
 
 public class Main {
 
@@ -46,10 +53,27 @@ public class Main {
 //        System.out.println(cacheManager2.getFromCache("key"));
 
         //Prototype
-        IShape circle = new Circle("red");
-        ShapeClient shapeClient = new ShapeClient(circle);
+//        IShape circle = new Circle("red");
+//        ShapeClient shapeClient = new ShapeClient(circle);
+//
+//        IShape redCircle = shapeClient.getShape();
+//        redCircle.draw();
 
-        IShape redCircle = shapeClient.getShape();
-        redCircle.draw();
+        //decorator pattern
+//        ICoffee myCoffee = new PlainCoffee();
+//        System.out.println("Price: " + myCoffee.getPrice());
+//        System.out.println("Description: " + myCoffee.getDescription());
+//
+//        myCoffee = new MilkCoffeeDecorator(myCoffee);
+//        System.out.println("Price: " + myCoffee.getPrice());
+//        System.out.println("Description: " + myCoffee.getDescription());
+//
+//        myCoffee = new SugarCoffeeDecorator(myCoffee);
+//        System.out.println("Price: " + myCoffee.getPrice());
+//        System.out.println("Description: " + myCoffee.getDescription());
+
+        //adapter pattern
+        IPrinter printer = new PrinterAdapter(new LegacyPrinter());
+        printer.print();
     }
 }
