@@ -6,10 +6,18 @@ import com.anuj.creational.prototype.ShapeClient;
 import com.anuj.structural.adapter.IPrinter;
 import com.anuj.structural.adapter.PrinterAdapter;
 import com.anuj.structural.adapter.legacy.LegacyPrinter;
+import com.anuj.structural.bridge.*;
 import com.anuj.structural.decorator.ICoffee;
 import com.anuj.structural.decorator.MilkCoffeeDecorator;
 import com.anuj.structural.decorator.PlainCoffee;
 import com.anuj.structural.decorator.SugarCoffeeDecorator;
+import com.anuj.structural.facade.AirController;
+import com.anuj.structural.facade.CarEngineFacade;
+import com.anuj.structural.facade.FuelInjector;
+import com.anuj.structural.facade.Ignition;
+import com.anuj.structural.proxy.Image;
+import com.anuj.structural.proxy.ProxyImage;
+import com.anuj.structural.proxy.RealImage;
 
 public class Main {
 
@@ -73,7 +81,30 @@ public class Main {
 //        System.out.println("Description: " + myCoffee.getDescription());
 
         //adapter pattern
-        IPrinter printer = new PrinterAdapter(new LegacyPrinter());
-        printer.print();
+//        IPrinter printer = new PrinterAdapter(new LegacyPrinter());
+//        printer.print();
+
+        //Proxy pattern
+//        Image image = new ProxyImage();
+//        image.display();
+
+        //Facade Pattern
+//        CarEngineFacade carEngineFacade = new CarEngineFacade(new AirController(), new FuelInjector(), new Ignition());
+//        carEngineFacade.startEngine();
+//        System.out.println("=======================");
+//        carEngineFacade.stopEngine();
+
+        //Bridge Pattern
+        ICarRegion carRegion = new SlaviaIndiaRegion();
+        ICar car = new Slavia(carRegion);
+
+        System.out.println("Is Indian Slavia right handed? " + car.isRightHanded());
+
+        System.out.println("========================");
+
+        carRegion = new SlaviaUSRegion();
+        car = new Slavia(carRegion);
+
+        System.out.println("Is US Slavia right handed? " + car.isRightHanded());
     }
 }
