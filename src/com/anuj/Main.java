@@ -7,6 +7,10 @@ import com.anuj.structural.adapter.IPrinter;
 import com.anuj.structural.adapter.PrinterAdapter;
 import com.anuj.structural.adapter.legacy.LegacyPrinter;
 import com.anuj.structural.bridge.*;
+import com.anuj.structural.composite.Developer;
+import com.anuj.structural.composite.Employee;
+import com.anuj.structural.composite.Manager;
+import com.anuj.structural.composite.Team;
 import com.anuj.structural.decorator.ICoffee;
 import com.anuj.structural.decorator.MilkCoffeeDecorator;
 import com.anuj.structural.decorator.PlainCoffee;
@@ -15,6 +19,9 @@ import com.anuj.structural.facade.AirController;
 import com.anuj.structural.facade.CarEngineFacade;
 import com.anuj.structural.facade.FuelInjector;
 import com.anuj.structural.facade.Ignition;
+import com.anuj.structural.flyweight.ITree;
+import com.anuj.structural.flyweight.factory.ITreeFactory;
+import com.anuj.structural.flyweight.factory.TreeFactory;
 import com.anuj.structural.proxy.Image;
 import com.anuj.structural.proxy.ProxyImage;
 import com.anuj.structural.proxy.RealImage;
@@ -95,16 +102,54 @@ public class Main {
 //        carEngineFacade.stopEngine();
 
         //Bridge Pattern
-        ICarRegion carRegion = new SlaviaIndiaRegion();
-        ICar car = new Slavia(carRegion);
+//        ICarRegion carRegion = new SlaviaIndiaRegion();
+//        ICar car = new Slavia(carRegion);
+//
+//        System.out.println("Is Indian Slavia right handed? " + car.isRightHanded());
+//
+//        System.out.println("========================");
+//
+//        carRegion = new SlaviaUSRegion();
+//        car = new Slavia(carRegion);
+//
+//        System.out.println("Is US Slavia right handed? " + car.isRightHanded());
 
-        System.out.println("Is Indian Slavia right handed? " + car.isRightHanded());
+        // Composite Design Pattern
+//        Employee dev1 = new Developer("dev1", 1);
+//        Employee dev2 = new Developer("dev2", 2);
+//
+//        Employee manager = new Manager("manager", 3);
+//
+//        Team engineeringTeam = new Team();
+//        Team managementTeam = new Team();
+//
+//        engineeringTeam.addEmployee(dev1);
+//        engineeringTeam.addEmployee(dev2);
+//
+//        managementTeam.addEmployee(manager);
+//
+//        Team company = new Team();
+//        company.addEmployee(engineeringTeam);
+//        company.addEmployee(managementTeam);
+//
+//        company.showEmployeeDetails();
 
-        System.out.println("========================");
+        //Flyweight Design Pattern
+        ITreeFactory treeFactory = new TreeFactory();
+        ITree tree1 = treeFactory.getTree("Oak", "Green", "Rough");
+        tree1.plantTree(10, 20);
 
-        carRegion = new SlaviaUSRegion();
-        car = new Slavia(carRegion);
+        ITree tree2 = treeFactory.getTree("Pine", "Green", "Smooth");
+        tree2.plantTree(15, 25);
 
-        System.out.println("Is US Slavia right handed? " + car.isRightHanded());
+        ITree tree3 = treeFactory.getTree("Oak", "Green", "Rough");
+        tree3.plantTree(30, 40);
+
+        ITree tree4 = treeFactory.getTree("Birch", "White", "Smooth");
+        tree4.plantTree(50, 60);
+
+        // Even though we requested two Oaks with the same properties, only one object was created and shared.
+        System.out.println("Number of distinct tree objects: " + treeFactory.getTotalObjects());
+
     }
 }
