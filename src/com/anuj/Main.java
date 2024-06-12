@@ -1,5 +1,9 @@
 package com.anuj;
 
+import com.anuj.behavioural.chainOfResponsibility.ISupportHandler;
+import com.anuj.behavioural.chainOfResponsibility.L1SupportHandler;
+import com.anuj.behavioural.chainOfResponsibility.L2SupportHandler;
+import com.anuj.behavioural.chainOfResponsibility.L3SupportHandler;
 import com.anuj.creational.prototype.Circle;
 import com.anuj.creational.prototype.IShape;
 import com.anuj.creational.prototype.ShapeClient;
@@ -135,21 +139,28 @@ public class Main {
 //        company.showEmployeeDetails();
 
         //Flyweight Design Pattern
-        ITreeFactory treeFactory = new TreeFactory();
-        ITree tree1 = treeFactory.getTree("Oak", "Green", "Rough");
-        tree1.plantTree(10, 20);
+//        ITreeFactory treeFactory = new TreeFactory();
+//        ITree tree1 = treeFactory.getTree("Oak", "Green", "Rough");
+//        tree1.plantTree(10, 20);
+//
+//        ITree tree2 = treeFactory.getTree("Pine", "Green", "Smooth");
+//        tree2.plantTree(15, 25);
+//
+//        ITree tree3 = treeFactory.getTree("Oak", "Green", "Rough");
+//        tree3.plantTree(30, 40);
+//
+//        ITree tree4 = treeFactory.getTree("Birch", "White", "Smooth");
+//        tree4.plantTree(50, 60);
+//
+//        // Even though we requested two Oaks with the same properties, only one object was created and shared.
+//        System.out.println("Number of distinct tree objects: " + treeFactory.getTotalObjects());
 
-        ITree tree2 = treeFactory.getTree("Pine", "Green", "Smooth");
-        tree2.plantTree(15, 25);
+        //Chain of Responsibility
+        ISupportHandler l3SupportHandler = new L3SupportHandler();
+        ISupportHandler l2SupportHandler = new L2SupportHandler(l3SupportHandler);
+        ISupportHandler l1SupportHandler = new L1SupportHandler(l2SupportHandler);
 
-        ITree tree3 = treeFactory.getTree("Oak", "Green", "Rough");
-        tree3.plantTree(30, 40);
-
-        ITree tree4 = treeFactory.getTree("Birch", "White", "Smooth");
-        tree4.plantTree(50, 60);
-
-        // Even though we requested two Oaks with the same properties, only one object was created and shared.
-        System.out.println("Number of distinct tree objects: " + treeFactory.getTotalObjects());
+        l1SupportHandler.handleIssue("Issue with severity: 2", 3);
 
     }
 }
