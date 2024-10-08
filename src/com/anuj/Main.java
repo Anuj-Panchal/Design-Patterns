@@ -4,6 +4,14 @@ import com.anuj.behavioural.chainOfResponsibility.ISupportHandler;
 import com.anuj.behavioural.chainOfResponsibility.L1SupportHandler;
 import com.anuj.behavioural.chainOfResponsibility.L2SupportHandler;
 import com.anuj.behavioural.chainOfResponsibility.L3SupportHandler;
+import com.anuj.behavioural.command.Command;
+import com.anuj.behavioural.command.CommandManager;
+import com.anuj.behavioural.command.TextEditor;
+import com.anuj.behavioural.command.WriteCommand;
+import com.anuj.behavioural.observer.ChatMediator;
+import com.anuj.behavioural.observer.ChatRoom;
+import com.anuj.behavioural.observer.ChatUser;
+import com.anuj.behavioural.observer.User;
 import com.anuj.creational.prototype.Circle;
 import com.anuj.creational.prototype.IShape;
 import com.anuj.creational.prototype.ShapeClient;
@@ -156,11 +164,46 @@ public class Main {
 //        System.out.println("Number of distinct tree objects: " + treeFactory.getTotalObjects());
 
         //Chain of Responsibility
-        ISupportHandler l3SupportHandler = new L3SupportHandler();
-        ISupportHandler l2SupportHandler = new L2SupportHandler(l3SupportHandler);
-        ISupportHandler l1SupportHandler = new L1SupportHandler(l2SupportHandler);
+//        ISupportHandler l3SupportHandler = new L3SupportHandler();
+//        ISupportHandler l2SupportHandler = new L2SupportHandler(l3SupportHandler);
+//        ISupportHandler l1SupportHandler = new L1SupportHandler(l2SupportHandler);
+//
+//        l1SupportHandler.handleIssue("Issue with severity: 2", 3);
 
-        l1SupportHandler.handleIssue("Issue with severity: 2", 3);
+        //Command Pattern
+//        TextEditor textEditor = new TextEditor();
+//
+//        Command writeCommand = new WriteCommand(textEditor);
+//        CommandManager commandManager = new CommandManager();
+//
+//        writeCommand.setText("Hello");
+//        commandManager.execute(writeCommand);
+//        System.out.println(textEditor.getContent());
+//
+//        writeCommand.setText(" World!");
+//        commandManager.execute(writeCommand);
+//        System.out.println(textEditor.getContent());
+//
+//        writeCommand.setText(" Anuj");
+//        commandManager.execute(writeCommand);
+//        System.out.println(textEditor.getContent());
+//
+//        commandManager.undo();
+//        System.out.println(textEditor.getContent());
 
+        //Mediator Pattern
+        ChatMediator chatMediator = new ChatRoom();
+
+        User user1 = new ChatUser("user1");
+        User user2 = new ChatUser("user2");
+        User user3 = new ChatUser("user3");
+        User user4 = new ChatUser("user4");
+
+        chatMediator.addUser(user1);
+        chatMediator.addUser(user2);
+        chatMediator.addUser(user3);
+        chatMediator.addUser(user4);
+
+        user1.sendMessage(chatMediator, "Hello from " + user1.getUserName());
     }
 }
