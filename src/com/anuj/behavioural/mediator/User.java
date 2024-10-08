@@ -1,4 +1,4 @@
-package com.anuj.behavioural.observer;
+package com.anuj.behavioural.mediator;
 
 public interface User {
 

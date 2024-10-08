@@ -1,42 +1,10 @@
 package com.anuj;
 
-import com.anuj.behavioural.chainOfResponsibility.ISupportHandler;
-import com.anuj.behavioural.chainOfResponsibility.L1SupportHandler;
-import com.anuj.behavioural.chainOfResponsibility.L2SupportHandler;
-import com.anuj.behavioural.chainOfResponsibility.L3SupportHandler;
-import com.anuj.behavioural.command.Command;
-import com.anuj.behavioural.command.CommandManager;
-import com.anuj.behavioural.command.TextEditor;
-import com.anuj.behavioural.command.WriteCommand;
-import com.anuj.behavioural.observer.ChatMediator;
-import com.anuj.behavioural.observer.ChatRoom;
-import com.anuj.behavioural.observer.ChatUser;
-import com.anuj.behavioural.observer.User;
-import com.anuj.creational.prototype.Circle;
-import com.anuj.creational.prototype.IShape;
-import com.anuj.creational.prototype.ShapeClient;
-import com.anuj.structural.adapter.IPrinter;
-import com.anuj.structural.adapter.PrinterAdapter;
-import com.anuj.structural.adapter.legacy.LegacyPrinter;
-import com.anuj.structural.bridge.*;
-import com.anuj.structural.composite.Developer;
-import com.anuj.structural.composite.Employee;
-import com.anuj.structural.composite.Manager;
-import com.anuj.structural.composite.Team;
-import com.anuj.structural.decorator.ICoffee;
-import com.anuj.structural.decorator.MilkCoffeeDecorator;
-import com.anuj.structural.decorator.PlainCoffee;
-import com.anuj.structural.decorator.SugarCoffeeDecorator;
-import com.anuj.structural.facade.AirController;
-import com.anuj.structural.facade.CarEngineFacade;
-import com.anuj.structural.facade.FuelInjector;
-import com.anuj.structural.facade.Ignition;
-import com.anuj.structural.flyweight.ITree;
-import com.anuj.structural.flyweight.factory.ITreeFactory;
-import com.anuj.structural.flyweight.factory.TreeFactory;
-import com.anuj.structural.proxy.Image;
-import com.anuj.structural.proxy.ProxyImage;
-import com.anuj.structural.proxy.RealImage;
+import com.anuj.behavioural.mediator.ChatMediator;
+import com.anuj.behavioural.mediator.ChatRoom;
+import com.anuj.behavioural.mediator.ChatUser;
+import com.anuj.behavioural.mediator.User;
+import com.anuj.behavioural.observer.*;
 
 public class Main {
 
@@ -192,18 +160,33 @@ public class Main {
 //        System.out.println(textEditor.getContent());
 
         //Mediator Pattern
-        ChatMediator chatMediator = new ChatRoom();
+//        ChatMediator chatMediator = new ChatRoom();
+//
+//        User user1 = new ChatUser("user1");
+//        User user2 = new ChatUser("user2");
+//        User user3 = new ChatUser("user3");
+//        User user4 = new ChatUser("user4");
+//
+//        chatMediator.addUser(user1);
+//        chatMediator.addUser(user2);
+//        chatMediator.addUser(user3);
+//        chatMediator.addUser(user4);
+//
+//        user1.sendMessage(chatMediator, "Hello from " + user1.getUserName());
 
-        User user1 = new ChatUser("user1");
-        User user2 = new ChatUser("user2");
-        User user3 = new ChatUser("user3");
-        User user4 = new ChatUser("user4");
+        //Observer Pattern
+        Subject subject = new TemperatureTopic();
 
-        chatMediator.addUser(user1);
-        chatMediator.addUser(user2);
-        chatMediator.addUser(user3);
-        chatMediator.addUser(user4);
+        Observer tvObserver = new TvObserver();
+        Observer phoneObserver = new PhoneObserver();
 
-        user1.sendMessage(chatMediator, "Hello from " + user1.getUserName());
+        tvObserver.subscribeSubject(subject);
+        phoneObserver.subscribeSubject(subject);
+
+        subject.setValue(20);
+
+        subject.removeObserver(tvObserver);
+
+        subject.setValue(30);
     }
 }

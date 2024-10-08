@@ -1,4 +1,4 @@
-package com.anuj.behavioural.observer;
+package com.anuj.behavioural.mediator;
 
 import java.util.ArrayList;
 import java.util.List;
