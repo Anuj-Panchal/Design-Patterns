@@ -1,14 +1,17 @@
 package com.anuj;
 
+import com.anuj.behavioural.iterator.Iterator;
+import com.anuj.behavioural.iterator.IteratorImpl;
 import com.anuj.behavioural.mediator.ChatMediator;
 import com.anuj.behavioural.mediator.ChatRoom;
 import com.anuj.behavioural.mediator.ChatUser;
 import com.anuj.behavioural.mediator.User;
 import com.anuj.behavioural.observer.*;
+import com.anuj.behavioural.visitor.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //Simple Factory
         //ILogger logger = SimpleFactory.getLogger(0);
@@ -175,18 +178,40 @@ public class Main {
 //        user1.sendMessage(chatMediator, "Hello from " + user1.getUserName());
 
         //Observer Pattern
-        Subject subject = new TemperatureTopic();
+//        Subject subject = new TemperatureTopic();
+//
+//        Observer tvObserver = new TvObserver();
+//        Observer phoneObserver = new PhoneObserver();
+//
+//        tvObserver.subscribeSubject(subject);
+//        phoneObserver.subscribeSubject(subject);
+//
+//        subject.setValue(20);
+//
+//        subject.removeObserver(tvObserver);
+//
+//        subject.setValue(30);
 
-        Observer tvObserver = new TvObserver();
-        Observer phoneObserver = new PhoneObserver();
+//        Iterator pattern
+//        String[] collection = {"Anuj1", "Anuj2", "Anuj3"};
+//        Iterator<String> iterator = new IteratorImpl<>(collection);
+//
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+//        System.out.println(iterator.next());
 
-        tvObserver.subscribeSubject(subject);
-        phoneObserver.subscribeSubject(subject);
+//        Visitor Pattern
 
-        subject.setValue(20);
+        IVisitor priceCalculator = new PriceCalculator();
 
-        subject.removeObserver(tvObserver);
+        Item[] items = {
+                new Book("Test Book", 34D),
+                new Fruit("Apple", 0.23D, 34D)
+        };
 
-        subject.setValue(30);
+        for(Item item: items) {
+            item.accept(priceCalculator);
+        }
     }
 }
